@@ -1,0 +1,10 @@
+{
+	"wc": {
+	"prefix": "wc",
+	"body": [
+		"///Example: DotsWidget()",
+		"/// Chức năng:"
+	],
+	"description": "wc"
+	}
+}
