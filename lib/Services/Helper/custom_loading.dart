@@ -21,16 +21,8 @@ void customLoading(BuildContext context) {
           ),
         );
       });
-  Future.delayed(
-    const Duration(seconds: 2),
-    // () => Navigator.pushReplacementNamed(context, '/view_stack'),
-    () => Navigator.of(context, rootNavigator: true).pop(),
-  );
 }
 
 void hideLoading(BuildContext context) {
-  Future.delayed(
-      const Duration(seconds: 2),
-      // () => Navigator.pushReplacementNamed(context, '/view_stack'),
-      () => Navigator.of(context, rootNavigator: true).pop());
+  Navigator.of(context, rootNavigator: true).pop();
 }

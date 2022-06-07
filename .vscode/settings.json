@@ -129,5 +129,6 @@
         "vượt",
         "xoay",
         "xong"
-    ]
+    ],
+    "npm-scripts.showStartNotification": false
 }

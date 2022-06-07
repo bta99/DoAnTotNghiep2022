@@ -10,6 +10,9 @@ class TextFieldCustom extends StatelessWidget {
   final Function(String)? onChanged;
   final bool? errorBorder;
   final bool? typePassword;
+  final Function()? onTap;
+  final bool? readOnly;
+  final String? value;
 
   const TextFieldCustom({
     this.placeholder,
@@ -19,6 +22,9 @@ class TextFieldCustom extends StatelessWidget {
     this.onChanged,
     this.errorBorder,
     this.typePassword,
+    this.onTap,
+    this.readOnly,
+    this.value,
     Key? key,
   }) : super(key: key);
 
@@ -27,6 +33,9 @@ class TextFieldCustom extends StatelessWidget {
     return SizedBox(
       height: 50,
       child: TextFormField(
+        onTap: onTap,
+        readOnly: readOnly ?? false,
+        initialValue: controller!.text,
         style: TextStyle(
           color: AppColors.textBlack,
           fontSize: 14,

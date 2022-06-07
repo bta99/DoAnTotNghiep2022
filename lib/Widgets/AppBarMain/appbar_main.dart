@@ -1,15 +1,13 @@
 import 'package:doantotnghiep/Config/Colors/colors.dart';
 import 'package:flutter/material.dart';
 
-AppBar appBarMain(
-  String avatar,
-  Widget title,
-) {
+AppBar appBarMain(String avatar, Widget title, {Widget? leading}) {
   return AppBar(
     backgroundColor: AppColors.white,
     // elevation: 0.0,
     title: title,
     centerTitle: true,
+    leading: leading,
     actions: [
       Padding(
         padding: const EdgeInsets.all(10.0),

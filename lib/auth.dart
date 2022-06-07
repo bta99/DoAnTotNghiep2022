@@ -1,9 +1,6 @@
-import 'package:doantotnghiep/Screens/Login/login.dart';
-import 'package:doantotnghiep/Screens/ViewStack/view_stack.dart';
 import 'package:doantotnghiep/Services/LocalStorage/local_storage.dart';
 import 'package:doantotnghiep/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 part 'auth_logic.dart';
 
 class AuthScreen extends StatefulWidget {

@@ -88,6 +88,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/icon_bg.png
   AssetGenImage get iconBg => const AssetGenImage('assets/images/icon_bg.png');
+
+  /// File path: assets/images/login_bg.jpg
+  AssetGenImage get loginBg =>
+      const AssetGenImage('assets/images/login_bg.jpg');
 }
 
 class Assets {

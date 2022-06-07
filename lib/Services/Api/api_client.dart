@@ -1,10 +1,9 @@
-import 'dart:io';
-
 import 'package:dio/dio.dart';
 import 'package:doantotnghiep/Services/Helper/custom_loading.dart';
 import 'package:doantotnghiep/Services/LocalStorage/local_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:get_it/get_it.dart';
 
 // const _routesExcludeRefreshToken = [
 //   '/login',
@@ -32,6 +31,7 @@ class ClientApi {
 class CustomInterceptor extends QueuedInterceptor {
   final Dio _dio;
   CustomInterceptor(this._dio);
+  var context = GetIt.instance<GlobalKey<NavigatorState>>().currentState;
 
   // void showLoading() {
   //   if (_dio.options.headers['isLoading'] ?? true) {
@@ -50,10 +50,9 @@ class CustomInterceptor extends QueuedInterceptor {
       'REQUEST[${options.method}] => PATH: ${options.path}',
     );
     // showLoading();
-    // customLoading(context);
+    customLoading(context!.context);
     //await LocalStorage.init();
     String accessToken = LocalStorage().token;
-    print(accessToken);
     if (accessToken.isNotEmpty) {
       // options.headers['Authorization'] = 'Bearer $accessToken';
       options.headers['Authorization'] = 'Bearer $accessToken';
@@ -64,7 +63,7 @@ class CustomInterceptor extends QueuedInterceptor {
 
   @override
   Future onResponse(Response response, ResponseInterceptorHandler handler) {
-    // hideLoading(context);
+    hideLoading(context!.context);
     if (kDebugMode) {
       // print("In File: api_client.dart, Line: 21 $response ");
       print(

@@ -18,27 +18,30 @@ class ViewStackLogic extends ChangeNotifier {
       title = 'Trang Chủ';
     }
     if (index == 1) {
-      title = 'Tài Khoản';
+      title = 'Cài đặt';
     }
     if (index == 2) {
-      title = 'Cài Đặt';
+      title = 'Thông tin tài khoản';
     }
-    callBack();
+    if (index == 3) {
+      title = 'Chấm công';
+    }
+    // callBack();
     notifyListeners();
   }
+  // void getApiDemo() async {
+  //   try {
+  //     data = await ser.getUsers();
+  //     notifyListeners();
+  //   } catch (e) {
+  //     debugPrint(e.toString());
+  //   }
+  // }
 
-  void getApiDemo() async {
-    try {
-      data = await ser.getUsers();
-      notifyListeners();
-    } catch (e) {
-      debugPrint(e.toString());
-    }
-  }
+  // void callBack() {
+  //   if (index == 1 && data.isEmpty) {
+  //     getApiDemo();
+  //   }
+  // }
 
-  void callBack() {
-    if (index == 1 && data.isEmpty) {
-      getApiDemo();
-    }
-  }
 }
